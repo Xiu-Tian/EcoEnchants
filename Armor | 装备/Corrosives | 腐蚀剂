@@ -1,0 +1,36 @@
+  # 此附魔拓展配置均为作者F1xSky(修天)原创
+  # 此配置非抄袭他人，仅此借鉴他人写法
+  # 该配置均为免费公开使用，切勿将该配置盗卖
+  # 若你在其他地方购买了此配置，请及时联系作者
+  # 作者QQ：898451302
+
+display-name: "□ 腐蚀剂"
+description: "&r每受到伤害有&a%chance%%&r概率让对方主手物品减少&a%damage%点&r耐久度"
+placeholders:
+  damage: "%level% * 30"
+  chance: "%level% * 10"
+type: normal
+
+targets:
+  - helmet
+  - chestplate
+  - leggings
+  - boots
+
+conflicts: [ ]
+rarity: common
+max-level: 5
+
+tradeable: true
+discoverable: true
+enchantable: true
+
+effects:
+  - id: damage_mainhand
+    args:
+      damage: "%level% * 30"
+      chance: "%level% * 10"
+    triggers:
+      - take_entity_damage
+
+conditions: [ ]
