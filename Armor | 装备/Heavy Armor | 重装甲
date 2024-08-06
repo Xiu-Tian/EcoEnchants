@@ -13,6 +13,10 @@ targets:
   - chestplate
 
 conflicts:
+  - protection
+  - fire_protection
+  - feather_falling
+  - blast_protection
   - projectile_protection
 rarity: common
 max-level: 5
