@@ -1,0 +1,37 @@
+  # 此附魔拓展配置均为作者F1xSky(修天)原创
+  # 此配置非抄袭他人，仅此借鉴他人写法
+  # 该配置均为免费公开使用，切勿将该配置盗卖
+  # 若你在其他地方购买了此配置，请及时联系作者
+  # 作者QQ：898451302
+
+display-name: "□ 矿工宝靴"
+description: "&r在血量减少至低于&a30%&r时，将有&a%placeholder%%&r的概率传送至高空"
+placeholder: "%level% * 25"
+type: normal
+
+targets:
+  - boots
+
+conflicts: [ ]
+rarity: common
+max-level: 4
+
+tradeable: true
+discoverable: true
+enchantable: true
+
+effects:
+  - id: teleport_to
+    args:
+      world: world
+      x: []
+      y: 300
+      z: []
+      chance: "%level% * 25"
+    triggers:
+      - take_damage
+
+conditions:
+  - id: below_health_percent
+    args:
+      percent: 30
