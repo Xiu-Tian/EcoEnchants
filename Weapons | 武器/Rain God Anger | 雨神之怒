@@ -4,7 +4,7 @@
   # 若你在其他地方购买了此配置，请及时联系作者
   # 作者QQ：898451302
 
-display-name: "□ 雨神之怒"
+display-name: "☆ 雨神之怒"
 description: "&r在雨中有&a%chance%%&r的概率使对方造成&a反胃、失明、凋零&r的效果维持&a%time%秒"
 placeholders: 
   chance: "%level% * 10"
