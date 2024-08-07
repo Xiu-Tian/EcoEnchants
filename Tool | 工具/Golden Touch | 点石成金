@@ -5,8 +5,10 @@
   # 作者QQ：898451302
 
 display-name: "□ 点石成金"
-description: "&r在挖掘石头和深板岩的时，有&a10%&r的掉落&a1颗金粒&r，和&a30%&r的概率&a1颗铁粒"
-placeholder: "%level%"
+description: "&r在挖掘石头和深板岩的时，有&a%gold%%&r的掉落&a1颗金粒&r，和&a%iron%%&r的概率&a1颗铁粒"
+placeholders: 
+  gold: "%level% * 8"
+  iron: "%level% * 15"
 type: normal
 
 targets:
@@ -16,7 +18,7 @@ conflicts:
   - fortune
   - silk_touch
 rarity: common
-max-level: 1
+max-level: 5
 
 tradeable: true
 discoverable: true
@@ -26,7 +28,7 @@ effects:
   - id: give_item
     args:
       item: "gold_nugget 1"
-      chance: 10
+      chance: "%level% * 10"
     triggers:
       - mine_block
     filters:
@@ -36,7 +38,7 @@ effects:
   - id: give_item
     args:
       item: "iron_nugget 1"
-      chance: 30
+      chance: "%level% * 15"
     triggers:
       - mine_block
     filters:
