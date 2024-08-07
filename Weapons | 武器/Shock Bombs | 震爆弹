@@ -1,0 +1,76 @@
+  # 此附魔拓展配置均为作者F1xSky(修天)原创
+  # 此配置非抄袭他人，仅此借鉴他人写法
+  # 该配置均为免费公开使用，切勿将该配置盗卖
+  # 若你在其他地方购买了此配置，请及时联系作者
+  # 作者QQ：898451302
+
+display-name: "□ 震爆弹"
+description: "&r击中生物后有&a%chance%%&r的概率产生对周围&a%radius%格&r内造成&a%damage%点&r的伤害"
+placeholders: 
+  chance: "%level% * 20"
+  damage: "%level% * 5"
+  radius: "%level% * 3"
+type: normal
+
+targets:
+  - bow
+
+conflicts:
+  - flame
+rarity: common
+max-level: 4
+
+tradeable: true
+discoverable: true
+enchantable: true
+
+effects:
+  - effects:
+      - id: particle_animation
+        args:
+          particle: wax_on
+          particle-amount: 5
+          animation: ground_spiral
+          entity: victim
+          use-eye-location: true
+          particle_args:
+              scalar: 1.618
+              distance-scalar: 0.5
+              duration: 10
+        triggers:
+          - projectile_hit
+      - id: aoe
+        args:
+            effects:
+                - id: damage_victim
+                  args:
+                      damage: "%level% * 5"
+                      true-damage: true
+                      delay: 10
+                - id: create_explosion
+                  args:
+                    power: 0
+                    amount: 1
+                    delay: 10
+                - id: particle_animation
+                  args:
+                      particle: wax_off
+                      particle-amount: 5
+                      animation: circle
+                      entity: victim
+                      use-eye-location: true
+                      particle_args:
+                          radius: 1
+                          duration: 10
+                          height: 0.5
+                          pitch: 1
+                          roll: 1800
+            shape: circle
+            radius: "%level% * 3"
+            angle: 120
+    args:
+      chance: "%level% * 20"
+    triggers:
+      - projectile_hit
+
+conditions: [ ]
