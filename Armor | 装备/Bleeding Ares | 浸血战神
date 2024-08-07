@@ -24,6 +24,7 @@ tradeable: true
 discoverable: true
 enchantable: true
 
+effects:
   - id: damage_multiplier
     args:
       multiplier: "2 + 2.5 * %level%"
