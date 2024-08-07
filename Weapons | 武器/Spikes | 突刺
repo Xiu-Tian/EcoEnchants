@@ -1,0 +1,82 @@
+  # 此附魔拓展配置均为作者F1xSky(修天)原创
+  # 此配置非抄袭他人，仅此借鉴他人写法
+  # 该配置均为免费公开使用，切勿将该配置盗卖
+  # 若你在其他地方购买了此配置，请及时联系作者
+  # 作者QQ：898451302
+
+display-name: "☆ 突刺"
+description: "&r右键时,以&a%velocity%x&r的速度向前突刺，获得&a3秒力量%strength%&r且对周围&a%radius%格&r内造成&a%damage%点&r伤害"
+placeholders: 
+  velocity: "0.3 * %level%"
+  strength: "%level% * 2"
+  radius: "%level%"
+  damage: "%level% * 5"
+type: normal
+
+targets:
+  - sword
+conflicts: [ ]
+rarity: common
+max-level: 5
+
+tradeable: true
+discoverable: true
+enchantable: true
+
+effects:
+  - effects:
+      - id: pull_to_location
+        args:
+          velocity: "0.3 * %level%"
+      - id: play_sound
+        args:
+          sound: ENTITY_FIREWORK_ROCKET_LAUNCH
+          pitch: 2
+          volume: 1
+      - id: potion_effect
+        args:
+          effect: strength
+          level: "%level% * 2"
+          duration: 60
+          apply_to_player: true
+      - id: aoe
+        args:
+            effects:
+                - id: damage_victim
+                  args:
+                      damage: "%level% * 5"
+                      true-damage: true
+                      delay: 10
+                - id: create_explosion
+                  args:
+                    power: 0
+                    amount: 1
+                    delay: 10
+                - id: particle_animation
+                  args:
+                      particle: soul
+                      particle-amount: 10
+                      animation: circle
+                      entity: victim
+                      use-eye-location: true
+                      particle_args:
+                          radius: 1
+                          duration: 10
+                          height: 1
+                          pitch: 1
+                          roll: 60
+                  triggers:
+                    - alt_click
+            shape: scan_in_front
+            radius: "%level%"
+            max_distance: "%level%"
+        triggers:
+          - alt_click
+    args:
+      cooldown: 30
+      send_cooldown_message: true
+      cooldown_message: "&7还有 &a%seconds% &7秒才可释放技能"
+    triggers:
+      - alt_click
+
+conditions: [ ]
