@@ -71,6 +71,6 @@ effects:
     args:
       chance: "%level% * 20"
     triggers:
-      - projectile_hit
+      - bow_attack
 
 conditions: [ ]
