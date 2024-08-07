@@ -5,8 +5,8 @@
   # 作者QQ：898451302
 
 display-name: "☆ 双刀流"
-description: "&r攻击时对目标造成双倍伤害，额外伤害&a%placeholder%点"
-placeholder: "(%level% * 1) + %melee_attack%"
+description: "&r攻击时对目标造成双倍伤害"
+placeholder: "%level%"
 type: normal
 
 targets:
@@ -14,7 +14,7 @@ targets:
 
 conflicts: [ ]
 rarity: common
-max-level: 5
+max-level: 1
 
 tradeable: true
 discoverable: true
@@ -23,7 +23,7 @@ enchantable: true
 effects:
   - id: add_damage
     args:
-      damage: "(%level% * 1) + %melee_attack%"
+      damage: "%melee_attack% * 2"
     triggers:
       - melee_attack
 
