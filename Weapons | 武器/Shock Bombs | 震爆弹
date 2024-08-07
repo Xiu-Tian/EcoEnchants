@@ -4,7 +4,7 @@
   # 若你在其他地方购买了此配置，请及时联系作者
   # 作者QQ：898451302
 
-display-name: "□ 震爆弹"
+display-name: "☆ 震爆弹"
 description: "&r击中生物后有&a%chance%%&r的概率产生对周围&a%radius%格&r内造成&a%damage%点&r的伤害"
 placeholders: 
   chance: "%level% * 20"
